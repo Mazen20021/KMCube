@@ -17,3 +17,7 @@ KM3 project was made with Java and Sqlite database. To run this properly you sho
 
 Trivia : Names are arranged in alphabetical order
 
+![image](https://user-images.githubusercontent.com/67175615/236689557-451f2276-a3f0-406f-99cf-a0e22f3531b1.png)
+![image](https://user-images.githubusercontent.com/67175615/236689602-472d3d0b-cd5f-428e-9e20-2ef9616bf5c8.png)
+![image](https://user-images.githubusercontent.com/67175615/236689607-b51e165d-3524-48cf-929c-606effe4ed13.png)
+![image](https://user-images.githubusercontent.com/67175615/236689619-34932109-a9de-43a7-9409-5f04dd4e3e9c.png)
