@@ -12,7 +12,7 @@ KM3 project was made with Java and Sqlite database. To run this properly you sho
 
 - [@Karem Amr](https://www.github.com/silentmug)
 - [@Mazen Ahmed](https://www.github.com/Mazen20021)
-- [@Muhammad Salah-](https://www.github.com/MuhammadSalah-MS)
+- [@Muhammad Salah](https://www.github.com/MuhammadSalah-MS)
 - [@Mohamed Magdy](https://www.github.com/mohamedmagdyali-lab)
 
 ### Trivia : 
