@@ -8,7 +8,7 @@ KM3 Project is a desktop Application made with Java programming Language to serv
 ## Installation
 KM3 project was made with Java and Sqlite database. To run this properly you should download the db file which contains the premade database and tabels ( put it C). Then you need to download two jar files rs2xml.jar and My-SQL- Connector given in the project and add it to your lib in netbeans project.
 
-## Authors
+## Creators
 
 - [@Karem Amr](https://www.github.com/silentmug)
 - [@Mazen Ahmed](https://www.github.com/Mazen20021)
