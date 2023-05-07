@@ -14,5 +14,6 @@ KM3 project was made with Java and Sqlite database. To run this properly you sho
 - [@Mazen Ahmed](https://www.github.com/Mazen20021)
 - [@Muhammad Salah-](https://www.github.com/MuhammadSalah-MS)
 - [@Mohamed Magdy](https://www.github.com/mohamedmagdyali-lab)
-trivia : Names are arranged in alphabetical order
+
+Trivia : Names are arranged in alphabetical order
 
