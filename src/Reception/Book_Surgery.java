@@ -14,11 +14,11 @@ import javax.swing.JOptionPane;
 import javax.swing.SingleSelectionModel;
 import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
-public class Patient_Female extends javax.swing.JFrame {
+public class Book_Surgery extends javax.swing.JFrame {
      Connection conn;
     ResultSet rss = null;
     PreparedStatement paa = null;
-    public Patient_Female() {
+    public Book_Surgery() {
         initComponents();
         conn = Config.connectDB();
      
@@ -164,7 +164,6 @@ public class Patient_Female extends javax.swing.JFrame {
         pn.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
 
         jPanel7.setBackground(new java.awt.Color(78, 102, 151));
-        jPanel7.setBorder(null);
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Rnum.setBackground(new java.awt.Color(153, 153, 153));
@@ -725,21 +724,23 @@ int pY  = 0;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Patient_Female.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Book_Surgery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Patient_Female.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Book_Surgery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Patient_Female.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Book_Surgery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Patient_Female.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Book_Surgery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Patient_Female().setVisible(true);
+                new Book_Surgery().setVisible(true);
             }
         });
     }

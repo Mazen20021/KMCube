@@ -210,7 +210,7 @@ public class Reception extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-       Patient_Female sr= new Patient_Female();
+       Book_Surgery sr= new Book_Surgery();
         sr.show();
         dispose();
     }//GEN-LAST:event_jButton8ActionPerformed

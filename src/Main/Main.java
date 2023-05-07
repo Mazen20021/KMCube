@@ -3,7 +3,7 @@ import Admins.Admins;
 import Doctors.doctor1;
 import Pharmacy.Pharmacy_Main;
 import Managers.Managers;
-import Reception.Patient_Female;
+import Reception.Book_Surgery;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -83,7 +83,7 @@ public class Main extends javax.swing.JFrame {
        }  
     }
     public void rec(){
-        Patient_Female ptf = new Patient_Female();
+        Book_Surgery ptf = new Book_Surgery();
         Managers mg = new Managers();
         Admins AD = new Admins();
         String nid  = NationalIDText.getText();
