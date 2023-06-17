@@ -399,7 +399,7 @@ public class SignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_SignupbotActionPerformed
 
     public void reg(){
-    Book_Surgery ptf = new Book_Surgery();
+    Patient_Female ptf = new Patient_Female();
     String n , id , p , a , pn;
      n  = Name_Sign.getText();
      id = NationalID.getText();

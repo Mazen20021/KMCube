@@ -1,126 +1,32 @@
 package Main;
-import Admins.Admins;
-import Doctors.doctor1;
-import Pharmacy.Pharmacy_Main;
-import Managers.Managers;
-import Reception.Book_Surgery;
+import Main.Login.Users;
 import java.awt.event.KeyEvent;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import Reception.Reception;
-public class Main extends javax.swing.JFrame {
-    Connection con ;
-    ResultSet rs = null;
-    PreparedStatement pa = null;
-    public Main() {
-        initComponents();
-        con = Config.connectDB();
-       
-    }
+public class Main extends javax.swing.JFrame  {
     int positionX = 0;
     int positionY = 0;
-    public void rec_doc(){
-        Admins AD = new Admins();
-        String nid  =  NationalIDText.getText();
-        String pass =  PasswordText.getText();
-        doctor1 dr = new doctor1();
-       if((nid.equals("10001")) & (pass.equals(getpass()))){
-           
-           AD.setVisible(true);
-            dispose();
-       }
-       else if((nid.equals("80002")) & (pass.equals("Admin_rs"))){
-           Reception rD = new Reception();
-           rD.show();
-            dispose();
-       }
-        else{
-        try{
-           String sql = "select * from doclist WHERE NationalID LIKE ? and Password LIKE ?;";
-           pa = con.prepareStatement(sql);
-           pa.setString(1, NationalIDText.getText());
-           pa.setString(2, PasswordText.getText());
-           rs = pa.executeQuery();
-           if(rs.next()){
-              dr.show();
-              dispose();
-           }
-           else if(!rs.next()){
-              rec();
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "User Is Not Found"); 
-           }
-           
-       }catch(SQLException ex){
-           JOptionPane.showMessageDialog(null, "Error"); 
-       }
+    public Main() {
+    initComponents();
+    }
+    private void checkID(String NID , String Pass){
+     Users us = new Users(NID , Pass);
+     dispose();  
+    }
+    public static void main(String args[]) {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
-}
-    public void farm(){
-        Pharmacy_Main fm = new Pharmacy_Main();
-      try{
-           String sql = "select * from FarmacyDoc WHERE DrID LIKE ? and Password LIKE ?;";
-           pa = con.prepareStatement(sql);
-           pa.setString(1, NationalIDText.getText());
-           pa.setString(2, PasswordText.getText());
-           rs = pa.executeQuery();
-           if(rs.next()){
-              fm.show();
-              dispose();
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "User Is Not Found"); 
-           }
-           
-       }catch(SQLException ex){
-           JOptionPane.showMessageDialog(null, "Error"); 
-       }  
+        java.awt.EventQueue.invokeLater(() -> {
+            new Main().setVisible(true);
+        });
     }
-    public void rec(){
-        Book_Surgery ptf = new Book_Surgery();
-        Managers mg = new Managers();
-        Admins AD = new Admins();
-        String nid  = NationalIDText.getText();
-        String pass =  PasswordText.getText();
-        if((nid.equals("10001")) & (pass.equals("Admin_ad"))){
-           
-           AD.setVisible(true);
-           dispose();
-       }
-       else if((nid.equals("90001")) & (pass.equals("Admin_mg"))){
-          
-           mg.setVisible(true);
-           dispose();
-       }
-       else{
-        try{
-           String sql = "select * from PatientData WHERE NationalID LIKE ? and Password LIKE ?;";
-           pa = con.prepareStatement(sql);
-           pa.setString(1, NationalIDText.getText());
-           pa.setString(2, PasswordText.getText());
-           rs = pa.executeQuery();
-           if(rs.next()){
-              ptf.show();
-              dispose();
-           }else if(!rs.next()){
-               farm();
-           }
-           else{
-               JOptionPane.showMessageDialog(null, "User Is Not Found"); 
-           }
-           
-       }catch(SQLException ex){
-           JOptionPane.showMessageDialog(null, "Error"); 
-       }
-       }
-    }
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -179,7 +85,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jDesktopPane1.setBorder(null);
         jDesktopPane1.setAutoscrolls(true);
         jDesktopPane1.setMaximumSize(new java.awt.Dimension(320, 640));
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(320, 640));
@@ -195,7 +100,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         MainPannel.setBackground(new java.awt.Color(8, 12, 61));
-        MainPannel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 12), new java.awt.Color(51, 51, 51))); // NOI18N
+        MainPannel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(51, 51, 51))); // NOI18N
         MainPannel.setAutoscrolls(true);
         MainPannel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -216,6 +121,11 @@ public class Main extends javax.swing.JFrame {
         LogIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogInMouseClicked(evt);
+            }
+        });
+        LogIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogInActionPerformed(evt);
             }
         });
         MainPannel.add(LogIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 361, 90, 60));
@@ -244,7 +154,6 @@ public class Main extends javax.swing.JFrame {
 
         NationalIDText.setBackground(new java.awt.Color(204, 204, 204));
         NationalIDText.setText("National ID");
-        NationalIDText.setCaretColor(java.awt.Color.white);
         NationalIDText.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         NationalIDText.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         NationalIDText.setSelectedTextColor(new java.awt.Color(0, 0, 0));
@@ -304,7 +213,7 @@ public class Main extends javax.swing.JFrame {
                 MainLogoMousePressed(evt);
             }
         });
-        MainPannel.add(MainLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 130));
+        MainPannel.add(MainLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 240, 130));
 
         Minimize.setBackground(new java.awt.Color(204, 204, 204));
         Minimize.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -481,13 +390,7 @@ public class Main extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_NationalIDTextKeyPressed
-private String password;
-    public void setadpass(String pass){
-    this.password = pass;
-}
-    public String getpass(){
-        return this.password;
-    }
+
     private void NationalIDTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NationalIDTextMousePressed
         // TODO add your handling code here:
         if(NationalIDText.getText().equals("National ID"))
@@ -516,7 +419,7 @@ private String password;
 
     private void LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInMouseClicked
         // TODO add your handling code here:
-        rec_doc();
+        checkID(NationalIDText.getText() , PasswordText.getText());
     }//GEN-LAST:event_LogInMouseClicked
 
     private void OurTeamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OurTeamActionPerformed
@@ -540,7 +443,7 @@ private String password;
     private void PasswordTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordTextKeyPressed
         // TODO add your handling code here:
         if(evt.getKeyChar() == KeyEvent.VK_ENTER){
-              rec_doc();
+             checkID(NationalIDText.getText() , PasswordText.getText());
         }
     }//GEN-LAST:event_PasswordTextKeyPressed
 
@@ -556,29 +459,11 @@ private String password;
             NationalIDText.setText("National ID");
         }
     }//GEN-LAST:event_NationalIDTextFocusGained
-  public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Main().setVisible(true);
-            }
-        });
-    }
+
+    private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
+
+    }//GEN-LAST:event_LogInActionPerformed
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogIn;

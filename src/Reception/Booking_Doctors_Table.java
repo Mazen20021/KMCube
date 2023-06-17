@@ -13,11 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
-
-/**
- *
- * @author user
- */
 public class Booking_Doctors_Table extends javax.swing.JFrame {
 
     /**
