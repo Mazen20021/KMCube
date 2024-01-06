@@ -1,4 +1,3 @@
-
 # KM3 ( KM-CUBE) 
 
 KM3 is a hospital managment system desktop application made with java programming language
@@ -20,8 +19,17 @@ KM3 project was made with Java and Sqlite database. To run this properly you sho
 - KM3 refers to the first letter of team names.
 
 ## Snapshots
+### Login Page
 ![image](https://user-images.githubusercontent.com/67175615/236689557-451f2276-a3f0-406f-99cf-a0e22f3531b1.png)
+
+### Admin Page
 ![image](https://user-images.githubusercontent.com/67175615/236689602-472d3d0b-cd5f-428e-9e20-2ef9616bf5c8.png)
+
+### Pharmacy Page
 ![image](https://user-images.githubusercontent.com/67175615/236689607-b51e165d-3524-48cf-929c-606effe4ed13.png)
+
+### Pharmacy Table Page
 ![image](https://user-images.githubusercontent.com/67175615/236689685-3a163871-c6b6-4995-ad95-b71cead829c5.png)
+
+### Managers Page
 ![image](https://user-images.githubusercontent.com/67175615/236689619-34932109-a9de-43a7-9409-5f04dd4e3e9c.png)
